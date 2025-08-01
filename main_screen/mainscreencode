@@ -1,1 +1,22 @@
+package com.example.syncflow // Replace with your app's package name
 
+import android.os.Bundle
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.app_layout_button) // Links to the XML layout file
+
+        // Step 1: Find your button by its ID
+        val addButton = findViewById<Button>(R.id.myButton)
+
+        // Step 2: Set up a click listener for the button
+        addButton.setOnClickListener {
+            // Step 3: Make the button do something!
+            println("Button clicked!") // This prints to the "Logcat" console
+        }
+    }
+}
