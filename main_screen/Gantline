@@ -1,0 +1,18 @@
+package com.example.syncflow
+
+data class GanttLine(
+    val habitName: String,
+    val hour: Int,    // 0 - 23
+    val minute: Int,  // 0 - 59
+    val second: Int   // 0 - 59
+) {
+    init {
+        require(hour in 0..23) { "Hour must be 0-23" }
+        require(minute in 0..59) { "Minute must be 0-59" }
+        require(second in 0..59) { "Second must be 0-59" }
+    }
+
+    override fun toString(): String {
+        return "$habitName at %02d:%02d:%02d".format(hour, minute, second)
+    }
+}
